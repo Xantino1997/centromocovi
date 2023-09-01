@@ -87,7 +87,7 @@ function Header() {
                   onClick={handleImageClick}
                 />
                 <p className="autor-info-header-parrafo">{user.username}</p>
-                <Link className="autor-info-header-register" to="/register">
+                <Link className="autor-info-header-register"  onClick={handleImageClick}>
                   <p style={{ color: "white" }}>Editar</p>
                 </Link>
                 <input
