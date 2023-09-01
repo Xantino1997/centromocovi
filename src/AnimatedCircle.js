@@ -50,7 +50,7 @@ const AnimatedCircle = () => {
           <div className="joined">
             {user ? (
               <>
-                <h5 className="title-joined">Comunidad Mocoví</h5>
+                <h5 className="title-joined">Centro Mocoví</h5>
                 <img className="img-joined" src={user.profilePicture}/>
                 <p>{greeting}, {user.username}</p>
               </>
