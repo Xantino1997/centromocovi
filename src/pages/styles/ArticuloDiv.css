@@ -55,6 +55,7 @@
   justify-content: center;
   margin-bottom: 20px;
   width: 100%;
+  cursor:pointer;
 }
 .botones button {
   display: flex;
