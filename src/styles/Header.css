@@ -86,7 +86,7 @@
 
 /* Estilos para el pseudo-elemento cuando se haga hover */
 .autor-info-header:hover::before {
-  content: "Editar";
+  content: "";
   border: 1px solid #ccc;
   text-align: center;
   align-items: center;
@@ -105,9 +105,9 @@
 }
 
 /* Ocultar la imagen cuando se haga hover */
-.autor-info-header-img:hover {
+/* .autor-info-header-img:hover {
   opacity: 0;
-}
+} */
 
 .autor-info-header-parrafo {
   border-radius: 5px;
