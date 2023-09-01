@@ -1,0 +1,98 @@
+.noticia-container {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+  
+    align-items:center; 
+  }
+  
+  .titulo {
+    font-size: 24px;
+    margin-bottom: 40px;
+    flex-direction:column;
+
+  }
+  
+  .portada {
+    float: right;
+    width: 60%;
+    height: 200px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom:10px;
+  }
+  
+  .autor-info {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .autor-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .autor-details {
+    font-size: 14px;
+  }
+  
+  .autor-nombre {
+    font-weight: bold;
+  }
+  
+  .noticia-texto {
+    width: 90%;
+    margin:20px;
+    padding:20px;
+  }
+  
+  .compartir {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .compartir img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .compartir button {
+    padding: 10px 15px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 600px) {
+    .noticia-container {
+      width: 90%;
+    }
+  
+    .portada {
+      float: none;
+      width: 100%;
+      height: 150px;
+      margin: 10px auto;
+    }
+  
+    .compartir {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

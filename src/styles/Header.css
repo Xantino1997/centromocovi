@@ -1,0 +1,376 @@
+.header {
+  background-color: #3463ad;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  width: 100%;
+  z-index: 999;
+}
+
+.autor-info-header-register{
+  top:30px;
+}
+
+.btn-menu-header {
+  display: none;
+}
+
+.btn-menu-header-open {
+  display: none;
+}
+
+
+
+.logo img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.menu {
+  margin-top: 10px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu ul li {
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.menu ul li a:hover {
+  text-decoration: underline;
+  background-color: lightblue;
+}
+
+.autor-info-header {
+  border: 1px solid #ccc;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: rgba(100, 20, 100, 0.6);
+  border-radius: 5px;
+}
+
+/* Estilos para la imagen de perfil */
+.autor-info-header-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 10px !important;
+  display: block;
+}
+
+/* Estilos para el pseudo-elemento cuando se haga hover */
+.autor-info-header:hover::before {
+  content: "Editar";
+  border: 1px solid #ccc;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 120px;
+  top: 20px;
+  padding-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  margin: 5px;
+  cursor: pointer;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Ocultar la imagen cuando se haga hover */
+.autor-info-header-img:hover {
+  opacity: 0;
+}
+
+.autor-info-header-parrafo {
+  border-radius: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Media Query para pantallas pequeñas, como smartphones */
+@media screen and (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Estilos para el botón del menú */
+  .btn-menu-header {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    margin-left: 10px;
+    color: #fff;
+    background-color: blue;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-menu-header-open {
+    position: absolute;
+    top: 20px;
+    color: #fff;
+    right: 20px;
+    display: flex;
+    background-color: blue;
+    padding: 10px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Estilos para el menú */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    display: block;
+    top: 0%;
+    position: absolute;
+    margin: 0 auto;
+    border: 1px solid yellow;
+    background: rgba(128, 128, 128, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    transform: translateY(-100%); /* Ocultar el menú inicialmente */
+    transition: transform 0.3s ease; /* Animación para mostrar o cerrar el menú */
+  }
+
+  .menu.active {
+    transform: translateY(
+      0%
+    ); /* Mostrar el menú cuando tiene la clase "active" */
+  }
+
+  .menu ul {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu ul li {
+    position: absolute;
+    width: 40%;
+    margin-left: 25%;
+    height: 8%;
+    z-index: 6;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .autor-info-header {
+    position: absolute;
+    z-index: 6;
+    right: 0;
+    top: 10px;
+    width: 20% !important;
+    border: solid 1px black;
+    margin-right: 15px;
+  }
+
+  .autor-info-header-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px !important;
+  }
+
+  .autor-info-header-register {
+    color: #fff !important;
+    border: solid 1px black;
+    padding: 3px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+
+  .menu ul li:nth-child(1) {
+    top: 16%;
+  }
+
+  .menu ul li:nth-child(2) {
+    top: 33%;
+  }
+
+  .menu ul li:nth-child(3) {
+    top: 50%;
+  }
+
+  .menu ul li:nth-child(4) {
+    top: 65%;
+  }
+
+  .menu ul li:nth-child(5) {
+    top: 78%;
+  }
+
+  .menu ul li a {
+    position: relative;
+    background: blue;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff !important;
+  }
+
+  .menu ul li a:hover {
+    text-decoration: underline;
+    background-color: lightblue;
+  }
+
+  .autor-info-header {
+    width: 100%; /* Ajustar el ancho del contenedor de información del autor en pantallas pequeñas */
+    font-size: 12px; /* Ajustar el tamaño de fuente del contenedor de información del autor en pantallas pequeñas */
+  }
+
+  .autor-info-header:hover::before {
+    width: 80px; /* Ajustar el ancho del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    height: 100px; /* Ajustar el alto del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    top: 10px; /* Ajustar la posición vertical del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    font-size: 10px; /* Ajustar el tamaño de fuente del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    z-index:6;
+  }
+}
+
+/* Media Query para pantallas medianas, como tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Estilos para el menú */
+  .menu {
+    display: flex;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .menu ul {
+    font-size: 13px;
+  }
+
+  .menu ul li {
+    font-size: 14px;
+  }
+
+  .autor-info-header {
+    border: solid 1px blue;
+    height: 150px;
+    max-width:100px;
+  }
+
+  .autor-info-header-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .autor-info-header-register {
+    color: #fff !important;
+    border: 1px solid #000;
+    padding: 5px;
+    text-decoration: none;
+    border-radius:15px;
+  }
+  .autor-info-header-register:hover {
+    color: #fff;
+    border: 1px solid #000;
+    padding: 5px;
+    text-decoration: underline;
+    border-radius:15px;
+  }
+
+  .menu ul li a {
+    color: #fff !important;
+  }
+
+  .menu ul li a:hover {
+  }
+
+  .autor-info-header {
+    top: 1px; /* Ajustar la posición vertical del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    width: 100%; /* Ajustar el ancho del contenedor de información del autor en pantallas pequeñas */
+    font-size: 12px; /* Ajustar el tamaño de fuente del contenedor de información del autor en pantallas pequeñas */
+  
+  }
+
+  .autor-info-header:hover::before {
+    width: 80px; /* Ajustar el ancho del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    height: 100px; /* Ajustar el alto del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    top: 30px; /* Ajustar la posición vertical del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+    font-size: 10px; /* Ajustar el tamaño de fuente del pseudo-elemento cuando se hace hover en pantallas pequeñas */
+  }
+
+  .logo-img{
+    max-width:80px; 
+    margin-right:10px;
+    margin-left:10px;
+  }
+}
+
+/* Media Query para pantallas grandes, como computadoras de escritorio */
+@media screen and (min-width: 1024px) {
+  .menu ul li {
+    margin-right: 30px; /* Ajustar el margen entre los elementos del menú en pantallas grandes */
+  }
+
+  .autor-info-header {
+    width: 100px; /* Ajustar el ancho del contenedor de información del autor en pantallas grandes */
+    font-size: 16px; /* Ajustar el tamaño de fuente del contenedor de información del autor en pantallas grandes */
+  }
+
+  .autor-info-header-img {
+    width: 60px; /* Ajustar el tamaño de la imagen de perfil en pantallas grandes */
+    height: 60px;
+  }
+
+  .autor-info-header:hover::before {
+    width: 100px; /* Ajustar el ancho del pseudo-elemento cuando se hace hover en pantallas grandes */
+    height: 120px; /* Ajustar el alto del pseudo-elemento cuando se hace hover en pantallas grandes */
+    top: 20px; /* Ajustar la posición vertical del pseudo-elemento cuando se hace hover en pantallas grandes */
+    font-size: 14px; /* Ajustar el tamaño de fuente del pseudo-elemento cuando se hace hover en pantallas grandes */
+  }
+}
