@@ -1,20 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Comunidades.css";
 import comunidad1 from "../assets/mocovi1.png";
+import Swal from "sweetalert2";
 
-const Comunidad = ({ nombre, localidad, telefono }) => (
-  <div className="comunidad">
-    <img src={comunidad1} alt={`Imagen de ${nombre}`} />
-    <h1>{nombre}</h1>
-    <p>Localidad: {localidad}</p>
-    <p>Teléfono: {telefono || "No proporcionado"}</p>
-    <Link to="/ver-comunidad">Ver Comunidad</Link>
-  </div>
-);
+const Comunidad = ({ nombre, localidad, telefono, resaltado }) => {
+  const mostrarSweetAlert = () => {
+    Swal.fire({
+      title: "Carga de Datos",
+      text: "Estamos terminando la carga de datos de la comunidad...",
+      icon: "info",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+  };
+
+  const classNames = `comunidad ${resaltado ? "resaltado" : ""}`;
+
+  return (
+    <>
+      <div className={classNames} id={nombre.toLowerCase()}>
+        <img
+          className="img-lista-comunidad"
+          src={comunidad1}
+          alt={`Imagen de ${nombre}`}
+        />
+        <div className="div-elementos-titulo" id="alcorta">
+          <h1>{nombre}</h1>
+          <p>Localidad: {localidad}</p>
+          <p>Teléfono: {telefono || "No proporcionado"}</p>
+          <Link to="/ver-comunidad" onClick={mostrarSweetAlert}>
+            Ver Comunidad
+          </Link>
+        </div>
+      </div>
+      <div className="texto-busqueda">
+        <h1>Este es el resultado de los que aparecen en la lista</h1>
+      </div>
+    </>
+  );
+};
 
 const Comunidades = () => {
-  const [usuario, setUsuario] = useState(""); // Aquí deberías obtener el usuario actual
+  const [usuario, setUsuario] = useState("");
   const [comunidades, setComunidades] = useState([]);
   const [nuevaComunidad, setNuevaComunidad] = useState({
     nombre: "",
@@ -22,13 +50,94 @@ const Comunidades = () => {
     telefono: "",
     imagenURL: "",
   });
+  const [busqueda, setBusqueda] = useState("");
+
+  // Definir comunidadesEstaticas antes de filtrarComunidades
+  const comunidadesEstaticas = [
+    {
+      id: "melincue",
+      nombre: "Melincue",
+      localidad: "Melincue",
+      telefono: "346544555",
+    },
+    {
+      id: "alcorta",
+      nombre: "Alcorta",
+      localidad: "Alcorta",
+      telefono: "346544555",
+    },
+    {
+      id: "santaTeresa",
+      nombre: "Santa Teresa",
+      localidad: "Santa Teresa ",
+      telefono: "346544555",
+    },
+    {
+      id: "sanMartinNorte",
+      nombre: "San Martin Norte",
+      localidad: "San Martin Norte",
+      telefono: "346544555",
+    },
+    {
+      id: "chovet",
+      nombre: "Chovet",
+      localidad: "Chovet",
+      telefono: "346544555",
+    },
+    {
+      id: "rosario",
+      nombre: "Rosario",
+      localidad: "Rosario",
+      telefono: "346544555",
+    },
+
+    {
+      id: "santaFe",
+      nombre: "Santa Fe",
+      localidad: "Santa Fe",
+      telefono: "346544555",
+    },
+  ];
+
+  const mostrarSweetAlert = () => {
+    Swal.fire({
+      title: "Estamos terminando de construir este link",
+      icon: "info",
+    });
+  };
+
+  // Función para ordenar comunidades estáticas en función de la búsqueda
+  const ordenarComunidadesEstaticas = () => {
+    const busquedaLowerCase = busqueda.toLowerCase();
+    return comunidadesEstaticas.sort((a, b) => {
+      if (a.id === busquedaLowerCase) return -1;
+      if (b.id === busquedaLowerCase) return 1;
+      return 0;
+    });
+  };
+  const obtenerTotalComunidades = () => {
+    const totalComunidades = comunidadesEstaticas.length;
+    return totalComunidades;
+  };
+  useEffect(() => {
+    const comunidadesFiltradas = filtrarComunidades();
+    setComunidades(comunidadesFiltradas);
+  }, [busqueda]);
+
+  const filtrarComunidades = () => {
+    if (!busqueda) {
+      return [...comunidadesEstaticas];
+    }
+
+    return [...comunidadesEstaticas].filter((comunidad) => {
+      const comunidadId = comunidad.nombre.toLowerCase();
+      return comunidadId.includes(busqueda.toLowerCase());
+    });
+  };
 
   const agregarComunidad = () => {
-    // Agregar lógica para agregar la comunidad a la lista
-    // Asegúrate de validar si el usuario es Gali antes de habilitar esta función.
     const nuevaLista = [...comunidades, nuevaComunidad];
     setComunidades(nuevaLista);
-    // Limpia el formulario después de agregar la comunidad
     setNuevaComunidad({
       nombre: "",
       localidad: "",
@@ -40,101 +149,62 @@ const Comunidades = () => {
   return (
     <div className="container-comunidad">
       <h1>Comunidades</h1>
-      {usuario === "Gali" && (
+      {usuario && (
         <div>
           <h2>Agregar Comunidad</h2>
-          <input
-            type="text"
-            placeholder="Nombre de la comunidad"
-            value={nuevaComunidad.nombre}
-            onChange={(e) =>
-              setNuevaComunidad({ ...nuevaComunidad, nombre: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            placeholder="Localidad"
-            value={nuevaComunidad.localidad}
-            onChange={(e) =>
-              setNuevaComunidad({
-                ...nuevaComunidad,
-                localidad: e.target.value,
-              })
-            }
-          />
-          <input
-            type="text"
-            placeholder="Teléfono"
-            value={nuevaComunidad.telefono}
-            onChange={(e) =>
-              setNuevaComunidad({ ...nuevaComunidad, telefono: e.target.value })
-            }
-          />
-          <input
-            type="text"
-            placeholder="URL de la imagen"
-            value={nuevaComunidad.imagenURL}
-            onChange={(e) =>
-              setNuevaComunidad({
-                ...nuevaComunidad,
-                imagenURL: e.target.value,
-              })
-            }
-          />
+          {/* ... Input fields ... */}
           <button onClick={agregarComunidad}>Agregar Comunidad</button>
         </div>
       )}
 
       <div className="comunidades-list">
-        {/* {comunidades.map((comunidad, index) => (
-          <Comunidad
-            key={index}
-            nombre={comunidad.nombre}
-            localidad={comunidad.localidad}
-            telefono={comunidad.telefono}
-          />
-        ))} */}
-        <>
-          <div className="list-group">
+        <input
+          className="busqueda-comunidad"
+          type="text"
+          placeholder="Buscar comunidad por nombre"
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+        />
+
+        {!busqueda && <p>Total comunidades: {obtenerTotalComunidades()}.</p>}
+        {busqueda && comunidades.length === 0 && (
+          <p>No se encontraron resultados que coincidan con la búsqueda.</p>
+        )}
+        {busqueda && comunidades.length > 0 && (
+          <>
+            <p>Mostrando {comunidades.length} resultados que coinciden:</p>
+            {comunidades.map((comunidad, index) => (
+              <Comunidad
+                key={index}
+                nombre={comunidad.nombre}
+                localidad={comunidad.localidad}
+                telefono={comunidad.telefono}
+                resaltado={true}
+              />
+            ))}
+          </>
+        )}
+
+        {/* Divs estáticos */}
+        {comunidadesEstaticas.map((comunidadEstatica, index) => (
+          <div key={index} className="list-group">
             <img
               className="img-lista-comunidad"
               src={comunidad1}
               alt={`Imagen Comunidad`}
             />
-            <div className="div-elementos-titulo">
-              <h1>Alcorta</h1>
-              <p>Localidad: Chovet</p>
-              <p>Teléfono: {346544555 || "No proporcionado"}</p>
-              <Link to="/ver-comunidad">Ver Comunidad</Link>
+            <div className="div-elementos-titulo" id={comunidadEstatica.id}>
+              <h1>{comunidadEstatica.nombre}</h1>
+              <p>Localidad: {comunidadEstatica.localidad}</p>
+              <p>
+                Teléfono: {comunidadEstatica.telefono || "No proporcionado"}
+              </p>
+              <Link to="" onClick={mostrarSweetAlert}>
+                Ver Comunidad
+              </Link>
             </div>
           </div>
-          <div className="list-group">
-            <img
-              className="img-lista-comunidad"
-              src={comunidad1}
-              alt={`Imagen Comunidad`}
-            />
-            <div className="div-elementos-titulo">
-              <h1>Alcorta</h1>
-              <p>Localidad: Chovet</p>
-              <p>Teléfono: {346544555 || "No proporcionado"}</p>
-              <Link to="/ver-comunidad">Ver Comunidad</Link>
-            </div>
-          </div>
-          <div className="list-group">
-            <img
-              className="img-lista-comunidad"
-              src={comunidad1}
-              alt={`Imagen Comunidad`}
-            />
-            <div className="div-elementos-titulo">
-              <h1>Alcorta</h1>
-              <p>Localidad: Chovet</p>
-              <p>Teléfono: {346544555 || "No proporcionado"}</p>
-              <Link to="/ver-comunidad">Ver Comunidad</Link>
-            </div>
-          </div>
-        </>
+        ))}
       </div>
     </div>
   );
