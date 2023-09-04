@@ -1,0 +1,89 @@
+
+.container-comunidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ddd;
+  color: #222;
+  font-family: "Amatic SC", cursive;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.comunidades-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-group {
+  border: #ccc 1px solid;
+  padding: 5px;
+  display: flex;
+  opacity: 1;
+  margin-top: 25px;
+  background-color: #102329;
+  width: 60em;
+}
+
+.img-lista-comunidad {
+  max-width: 100%;
+  transition: transform 0.5s ease, opacity 0.9s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list-group:hover .img-lista-comunidad {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.div-elementos-titulo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  margin-left: 50px;
+  background: #3463ad;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.div-elementos-titulo h1,
+.div-elementos-titulo p,
+.div-elementos-titulo a {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  opacity: 0; /* Inicialmente, establece la opacidad en 0 */
+  animation: aparecer 0.9s ease forwards; /* forwards para mantener el estado final */
+  animation-delay: 0.1s; /* Retraso para que aparezcan después de la imagen */
+}
+
+.div-elementos-titulo a {
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+  background-color: lightblue;
+  border-radius: 15px;
+}
+
+.div-elementos-titulo a:hover {
+  color: #fff;
+  text-decoration: underline;
+  background-color: #1a5d75;
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+  0% {
+    transform: translateY(-80px); /* Comienza desde la izquierda */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Se posiciona en su lugar */
+    opacity: 1;
+  }
+}
