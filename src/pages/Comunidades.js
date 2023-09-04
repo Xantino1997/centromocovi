@@ -172,7 +172,7 @@ const Comunidades = () => {
         )}
         {busqueda && comunidades.length > 0 && (
           <>
-            <p>Mostrando {comunidades.length} resultados que coinciden:</p>
+            <p>Mostrando {comunidades.length} resultado que coinciden:</p>
             {comunidades.map((comunidad, index) => (
               <Comunidad
                 key={index}
