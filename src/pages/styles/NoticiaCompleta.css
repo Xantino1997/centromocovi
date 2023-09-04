@@ -3,8 +3,11 @@
     height: 100%;
     display:flex;
     flex-direction:column;
-  
+    font-family: "Amatic SC", cursive;
+    font-family: "Roboto Condensed", sans-serif;
     align-items:center; 
+    text-align:center;
+
   }
   
   .titulo {
@@ -17,15 +20,68 @@
   .portada {
     float: right;
     width: 60%;
-    height: 200px;
+    height: 22em;
     margin-left: 20px;
     border: 1px solid #ccc;
     object-fit: cover;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-bottom:10px;
   }
+
+  .conteiner-img2{
+    width:100%;
+    height:30%;
+    justify-content:center;
+    flex-direction:column;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+  .img2{
+    width:20%;
+  }
   
+  .img3{
+    width:60%;
+    margin-bottom:10px;
+  }
+  
+  .img4{
+    width:30%;
+    height:30%;
+  }
+  
+
+   .conteiner-img3{
+    font-weight:bold;
+    width:100%;
+    height:30%;
+    justify-content:space-around;
+    flex-direction:row;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding:10px;
+  } 
+.conteiner-individual{
+  width:100%;
+  height:30%;
+  justify-content:space-around;
+  flex-direction:column;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
   .autor-info {
     display: flex;
     align-items: center;
