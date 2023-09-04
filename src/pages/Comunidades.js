@@ -40,9 +40,9 @@ const Comunidad = ({ nombre, localidad, telefono, resaltado }) => {
           </Link>
         </div>
       </div>
-      <div className="texto-busqueda">
-        <h1>Este es el resultado de los que aparecen en la lista</h1>
-      </div>
+      // <div className="texto-busqueda">
+      //   <h1>Este es el resultado de los que aparecen en la lista</h1>
+      // </div>
     </>
   );
 };
