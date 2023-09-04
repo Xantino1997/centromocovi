@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/ArticuloDiv.css";
-import mocovi1 from "../assets/mocovi1.png";
+import reunion4 from "../assets/reunion4.png";
 import { Link } from "react-router-dom";
 
 const ArticuloDiv = () => {
@@ -25,53 +25,10 @@ const ArticuloDiv = () => {
       Noticias: [
         {
           id: 1,
-          titulo: "News 1",
-          subtitulo: "Subtitle for News 1",
-          info: "Brief information about News 1...",
-          image: mocovi1,
-        },
-        {
-          id: 1,
-          titulo: "News 1",
-          subtitulo: "Subtitle for News 1",
-          info: "Brief information about News 1...",
-          image: mocovi1,
-        },
-        {
-          id: 1,
-          titulo: "News 1",
-          subtitulo: "Subtitle for News 1",
-          info: "Brief information about News 1...",
-          image: mocovi1,
-        },
-        {
-          id: 1,
-          titulo: "News 1",
-          subtitulo: "Subtitle for News 1",
-          info: "Brief information about News 1...",
-          image: mocovi1,
-        },
-        // Otras noticias en inglés...
-      ],
-      Video: [
-        {
-          id: 1,
-          titulo: "Video 1",
-          subtitulo: "Subtitle for Video 1",
-          info: "Brief information about Video 1...",
-          videoId: "VhDlH-hvhfo", // ID del video de YouTube
-        },
-        // Otros videos en inglés...
-      ],
-    },
-    Español: {
-      Noticias: [
-        {
-          id: 1,
-          titulo: "Noticia 1",
-          subtitulo: "Subtítulo para Noticia 1",
-          info: "Breve información sobre la Noticia 1...",
-          image: mocovi1,
+          titulo: "Entrega personalidad juridica",
+          subtitulo: "Hito para San Martin Norte",
+          info: "Se hizo entrega de la personalidad juridica...",
+          image: reunion4,
         },
       ],
       Video: [
@@ -82,7 +39,27 @@ const ArticuloDiv = () => {
           info: "Breve información sobre el Video 1...",
           videoId: "VhDlH-hvhfo", // ID del video de YouTube
         },
-        // Otros videos en español...
+      ],
+    },
+    Español: {
+      Noticias: [
+        {
+          id: 1,
+          titulo: "News 1",
+          subtitulo: "Subtitle for News 1",
+          info: "Brief information about News 1...",
+          image: reunion4,
+        },
+      ],
+      Video: [
+        {
+          id: 1,
+          titulo: "Video 1",
+          subtitulo: "Subtitle for Video 1",
+          info: "Brief information about Video 1...",
+          videoId: "VhDlH-hvhfo", // ID del video de YouTube
+
+        },
       ],
     },
   };
@@ -128,9 +105,9 @@ const ArticuloDiv = () => {
         >
           Video
         </button>
-        <button className="boton-idioma" onClick={handleLanguageChange}>
+        {/* <button className="boton-idioma" onClick={handleLanguageChange}>
           Cambiar idioma
-        </button>
+        </button> */}
       </div>
       {contenidoActual.map((item) => (
         <div className="Item" key={item.id}>
@@ -139,7 +116,7 @@ const ArticuloDiv = () => {
           <p>{item.info}</p>
           {currentCategory === "Video" && (
             <iframe
-            className="video-container-noticias"
+              className="video-container-noticias"
               width="560"
               height="315"
               src={`https://www.youtube.com/embed/${item.videoId}`}
@@ -152,8 +129,12 @@ const ArticuloDiv = () => {
             <>
               <hr />
               <div className="container-noticias">
-                <img src={item.image} alt={item.titulo} />
-                <Link className="link-noticias" to="/">
+                <img
+                  className="img-informe-noticia"
+                  src={item.image}
+                  alt={item.titulo}
+                />
+                <Link className="link-noticias" to="/pagina-noticias">
                   Ver Mas
                 </Link>
               </div>
