@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
+import patron from "./assets/patron.png";
 import "./AnimatedCircle.css";
 
 const AnimatedCircle = () => {
@@ -50,12 +51,17 @@ const AnimatedCircle = () => {
           <div className="joined">
             {user ? (
               <>
-                <h5 className="title-joined">Centro Mocoví</h5>
-                <img className="img-joined" src={user.profilePicture}/>
-                <p>{greeting}, {user.username}</p>
+                <h5 className="title-joined">Comunidad Mocoví</h5>
+                <img className="img-joined" src={user.profilePicture} />
+                <p>
+                  {greeting}, {user.username}
+                </p>
               </>
             ) : (
-              <h5 className="title-joined">Hasta luego</h5>
+              <>
+                <h5 className="title-joined">Hasta luego</h5>
+                <img className="img-joined" src={patron} />
+              </>
             )}
           </div>
         )}
