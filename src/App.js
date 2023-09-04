@@ -5,8 +5,9 @@ import IndexPage from './pages/IndexPage';
 import About from './pages/About';
 import ArticuloDiv from './pages/Noticias';
 import CrearPost from './pages/CrearPost';
-import Noticias from './pages/NoticiasNueva';
+import Noticias from './pages/NoticiaCompleta';
 import RegisterPage from './pages/RegisterPage';
+import Comunidades from './pages/Comunidades';
 
 import Layout from './Layout';
 import LoginForm from './pages/Login';
@@ -23,12 +24,13 @@ function App() {
             <Route index element={<IndexPage />} />
             <Route path="/sobre-nosotros" element={<About />} />
             <Route path="/noticias" element={<ArticuloDiv />} />
-            <Route path="/noticias-completa" element={<Noticias />} />
+            <Route path="/pagina-noticias" element={<Noticias />} />
             <Route path="/redirigiendo" element={<AnimatedCircle />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/crear-post" element={<CrearPost />} />
+            <Route path="/comunidades" element={<Comunidades />} />
           </Route>
         </Routes>
       </Router>
