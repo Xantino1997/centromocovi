@@ -56,6 +56,9 @@ function Header() {
           <li>
             <Link to="/noticias">Noticias</Link>
           </li>
+          <li>
+            <Link to="/comunidades">Comunidades</Link>
+          </li>
           {/* <li>
                       <Link to="/comunidad">Comunidad</Link>
                     </li> */}
