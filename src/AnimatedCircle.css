@@ -1,129 +1,126 @@
 /* Estilos para el contenedor de los círculos */
 .container-circles {
-    display: flex;
-    top: 0;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 50;
-    position: absolute;
-  }
-  
-  /* Estilos para los círculos */
-  .circle {
-    top:30%;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  /* Estilos para los puntos (círculos giratorios) */
-  .point {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    transform-origin: 50% 250%;
-    animation: showCircle 2s cubic-bezier(0.3, 1, 0.8, 1) infinite, joinCircles 3s cubic-bezier(0.3, 1, 0.8, 1) forwards;
-    opacity: 1; /* Inicialmente los círculos son visibles */
-  }
-  
-  /* Animación para hacer aparecer y desaparecer los círculos */
-  @keyframes showCircle {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 50;
+  position: absolute;
+}
 
-    }
-    100% {
-      opacity: 0;
-    }
+/* Estilos para los círculos */
+.circle {
+  top: 30%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Estilos para los puntos (círculos giratorios) */
+.point {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: 50% 250%;
+  animation: showCircle 2s cubic-bezier(0.3, 1, 0.8, 1) infinite,
+    joinCircles 3s cubic-bezier(0.3, 1, 0.8, 1) forwards;
+  opacity: 1; /* Inicialmente los círculos son visibles */
+}
+
+/* Animación para hacer aparecer y desaparecer los círculos */
+@keyframes showCircle {
+  0% {
+    opacity: 0;
   }
-  
-  /* Animación para unir los círculos al centro */
-  @keyframes joinCircles {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
+  50% {
+    opacity: 1;
   }
-  
-  /* Estilos para el círculo rojo */
-  .red {
-    background-color: red;
-    animation: moveCircleRed 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+  100% {
+    opacity: 0;
   }
-  
-  /* Animación para el círculo rojo */
-  @keyframes moveCircleRed {
-    0% {
-      transform: rotate(0deg) translateY(-80px) rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg) translateY(-80px) rotate(-360deg);
-      
-    }
+}
+
+/* Animación para unir los círculos al centro */
+@keyframes joinCircles {
+  0% {
+    transform: scale(1);
   }
-  
-  /* Estilos para el círculo negro */
-  .black {
-    background-color: black;
-    animation: moveCircleBlack 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+  100% {
+    transform: scale(0);
   }
-  
-  /* Animación para el círculo negro */
-  @keyframes moveCircleBlack {
-    0% {
-      transform: rotate(0deg) translateY(-40px) rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg) translateY(-40px) rotate(-360deg);
-      
-    }
+}
+
+/* Estilos para el círculo rojo */
+.red {
+  background-color: red;
+  animation: moveCircleRed 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+}
+
+/* Animación para el círculo rojo */
+@keyframes moveCircleRed {
+  0% {
+    transform: rotate(0deg) translateY(-80px) rotate(0deg);
   }
-  
-  /* Estilos para el círculo amarillo */
-  .yellow {
-    background-color: yellow;
-    animation: moveCircleYellow 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+  100% {
+    transform: rotate(360deg) translateY(-80px) rotate(-360deg);
   }
-  
-  /* Animación para el círculo amarillo */
-  @keyframes moveCircleYellow {
-    0% {
-      transform: rotate(0deg) translateY(40px) rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg) translateY(40px) rotate(-360deg);
-     
-    }
+}
+
+/* Estilos para el círculo negro */
+.black {
+  background-color: black;
+  animation: moveCircleBlack 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+}
+
+/* Animación para el círculo negro */
+@keyframes moveCircleBlack {
+  0% {
+    transform: rotate(0deg) translateY(-40px) rotate(0deg);
   }
-  
-  /* Estilos para el círculo azul */
-  .blue {
-    background-color: blue;
-    animation: moveCircleBlue 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+  100% {
+    transform: rotate(360deg) translateY(-40px) rotate(-360deg);
   }
-  
-  /* Animación para el círculo azul */
-  @keyframes moveCircleBlue {
-    0% {
-      transform: rotate(0deg) translateY(80px) rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg) translateY(80px) rotate(-360deg);
-    }
+}
+
+/* Estilos para el círculo amarillo */
+.yellow {
+  background-color: yellow;
+  animation: moveCircleYellow 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+}
+
+/* Animación para el círculo amarillo */
+@keyframes moveCircleYellow {
+  0% {
+    transform: rotate(0deg) translateY(40px) rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(360deg) translateY(40px) rotate(-360deg);
+  }
+}
+
+/* Estilos para el círculo azul */
+.blue {
+  background-color: blue;
+  animation: moveCircleBlue 2s cubic-bezier(0.3, 1, 0.8, 1) infinite;
+}
+
+/* Animación para el círculo azul */
+@keyframes moveCircleBlue {
+  0% {
+    transform: rotate(0deg) translateY(80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateY(80px) rotate(-360deg);
+  }
+}
+
 /* Animación para hacer visible la frase */
 .joined {
   position: absolute;
@@ -132,11 +129,11 @@
   color: white;
   animation: fadeIn 2s forwards;
   opacity: 0;
-  background-color: violet;
-  height: 0;
-  width: 0;
+  background-color: #007bff;
+  height: 100%;
+  width: 100%;
   margin: 0px;
-  border-radius: 50%;
+  /* border-radius: 100%; */
 }
 
 .title-joined {
@@ -163,9 +160,9 @@
   }
 }
 
-.img-joined{
+.img-joined {
   width: 100px;
   height: 100px;
-  border:#000 solid 2px;
-  border-radius:15px;
+  border: #000 solid 2px;
+  border-radius: 15px;
 }
