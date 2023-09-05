@@ -8,6 +8,7 @@ import CrearPost from './pages/CrearPost';
 import Noticias from './pages/NoticiaCompleta';
 import RegisterPage from './pages/RegisterPage';
 import Comunidades from './pages/Comunidades';
+import VerComunidad from './pages/VerComunidad';
 
 import Layout from './Layout';
 import LoginForm from './pages/Login';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/crear-post" element={<CrearPost />} />
             <Route path="/comunidades" element={<Comunidades />} />
+            <Route path="/ver-comunidad" element={<VerComunidad />} />
           </Route>
         </Routes>
       </Router>
