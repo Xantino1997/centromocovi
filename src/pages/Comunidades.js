@@ -12,6 +12,12 @@ import Swal from "sweetalert2";
 
 const Comunidad = ({ nombre, localidad, telefono, resaltado }) => {
   const mostrarSweetAlert = () => {
+    // Guardar los datos de la comunidad en el localStorage
+    localStorage.setItem(
+      "comunidadSeleccionada",
+      JSON.stringify({ nombre, localidad, telefono })
+    );
+
     Swal.fire({
       title: "Carga de Datos",
       text: "Estamos terminando la carga de datos de la comunidad...",
@@ -31,7 +37,7 @@ const Comunidad = ({ nombre, localidad, telefono, resaltado }) => {
           src={comunidad1}
           alt={`Imagen de ${nombre}`}
         />
-        <div className="div-elementos-titulo" id="alcorta">
+        <div className="div-elementos-titulo" id={nombre.toLowerCase()}>
           <h1>{nombre}</h1>
           <p>Localidad: {localidad}</p>
           <p>Teléfono: {telefono || "No proporcionado"}</p>
@@ -59,42 +65,46 @@ const Comunidades = () => {
   const comunidadesEstaticas = [
     {
       id: "melincue",
-      image:comunidad1,
+      image: comunidad1,
       nombre: "Melincue",
       localidad: "Melincue",
       telefono: "346544555",
+      resumen:
+        "La localidad de Melincue es un pueblo ubicado al sur de la provincia de Sta Fe, en su historia alberga un sin fin de momentos historicos dentro de los cuales muchos se escribieron con la tinta de la comunidad Mocovi...",
     },
     {
       id: "alcorta",
-      image:comunidad2,
+      image: comunidad2,
       nombre: "Alcorta",
       localidad: "Alcorta",
       telefono: "346544555",
+      resumen:
+        "Alcorta llamada tambien la cuna de la revolucion agraria a tenido una influencia relevante para el desarrollo del pais, sus tierras tambien tienen huellas de la diversidad de la cultura Mocovi, que yace dentro de un singular movimiento de querer revitalizar esa potente herencia de esta comunidad cuenta con un creciente numero de miembros ",
     },
     {
       id: "santaTeresa",
-      image:comunidad3,
+      image: comunidad3,
       nombre: "Santa Teresa",
       localidad: "Santa Teresa ",
       telefono: "346544555",
     },
     {
       id: "sanMartinNorte",
-      image:comunidad4,
+      image: comunidad4,
       nombre: "San Martin Norte",
       localidad: "San Martin Norte",
       telefono: "346544555",
     },
     {
       id: "chovet",
-      image:comunidad5,
+      image: comunidad5,
       nombre: "Chovet",
       localidad: "Chovet",
       telefono: "346544555",
     },
     {
       id: "rosario",
-      image:comunidad6,
+      image: comunidad6,
       nombre: "Rosario",
       localidad: "Rosario",
       telefono: "346544555",
@@ -102,19 +112,12 @@ const Comunidades = () => {
 
     {
       id: "santaFe",
-      image:comunidad7,
+      image: comunidad7,
       nombre: "Santa Fe",
       localidad: "Santa Fe",
       telefono: "346544555",
     },
   ];
-
-  const mostrarSweetAlert = () => {
-    Swal.fire({
-      title: "Estamos terminando de construir este link",
-      icon: "info",
-    });
-  };
 
   // Función para ordenar comunidades estáticas en función de la búsqueda
   const ordenarComunidadesEstaticas = () => {
@@ -156,10 +159,46 @@ const Comunidades = () => {
     });
   };
 
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  // Función para desplazarse al principio de la página
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Detectar el desplazamiento y mostrar/ocultar el botón
+  const handleScroll = () => {
+    if (window.pageYOffset > 300) {
+      setShowScrollButton(true);
+    } else {
+      setShowScrollButton(false);
+    }
+  };
+
+  // Agregar un event listener al cargar el componente
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+ 
+
   return (
     <>
-      <div className="container-sin-contenido"><p>No se puede mostrar contenido</p></div>
+      <div className="container-sin-contenido">
+        <p>No se puede mostrar contenido</p>
+      </div>
       <div className="container-comunidad">
+      {showScrollButton && (
+          <div className="scroll-button" onClick={scrollToTop}>
+            <span>&uarr;</span>
+          </div>
+        )}
         <h1>Comunidades</h1>
         {usuario && (
           <div>
@@ -211,16 +250,43 @@ const Comunidades = () => {
                 <p>
                   Teléfono: {comunidadEstatica.telefono || "No proporcionado"}
                 </p>
-                <Link to="" onClick={mostrarSweetAlert}>
+                <Link
+                  to="/ver-comunidad"
+                  onClick={() => mostrarSweetAlert(comunidadEstatica)}
+                >
                   Ver Comunidad
                 </Link>
               </div>
             </div>
           ))}
+         
         </div>
+        
       </div>
     </>
   );
+};
+
+const mostrarSweetAlert = (comunidadEstatica) => {
+  const nombre = comunidadEstatica.nombre;
+  const localidad = comunidadEstatica.localidad;
+  const telefono = comunidadEstatica.telefono;
+  const image = comunidadEstatica.image;
+  const resumen = comunidadEstatica.resumen;
+
+  // Guardar los datos de la comunidad en el localStorage
+  localStorage.setItem(
+    "comunidadSeleccionada",
+    JSON.stringify({ nombre, localidad, telefono, image, resumen })
+  );
+
+  Swal.fire({
+    title: "Carga de Datos",
+    text: `Bienvenido a la comunidad ${localidad}`,
+    icon: "info",
+    timer: 2000,
+    showConfirmButton: false,
+  });
 };
 
 export default Comunidades;
