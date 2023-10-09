@@ -17,7 +17,7 @@ export default function LoginForm() {
 
   async function login(ev) {
     ev.preventDefault();
-    const response = await fetch(`http://localhost:4000/login`, {
+    const response = await fetch(`https://back-comunidad.vercel.app/login`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -94,11 +94,7 @@ export default function LoginForm() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="off" 
-<<<<<<< HEAD
               onPaste={(e) => e.preventDefault()} 
-=======
-              onPaste={(e) => e.preventDefault()} // Impide pegar en el input
->>>>>>> 01b043149b60a41bcdb598e316365d903f62cd68
             />
           </div>
           <button
