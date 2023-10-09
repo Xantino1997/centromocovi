@@ -34,7 +34,7 @@ export default function RecuperarPass() {
         localStorage.removeItem("recuperarToken");
       }, 2 * 60 * 1000);
 
-      fetch("https://back-comunidad.vercel.app/recuperar-password", {
+      fetch("http://localhost:4000/recuperar-password", {
         method: "POST",
         body: JSON.stringify({ email, token: newToken }),
         headers: {
