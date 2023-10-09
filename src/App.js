@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import IndexPage from './pages/IndexPage';
 import About from './pages/About';
 import ArticuloDiv from './pages/Noticias';
 import CrearPost from './pages/CrearPost';
+
 import Recuperar from './pages/RecuperarPass';
 import Noticias from './pages/NoticiaCompleta';
 import RegisterPage from './pages/RegisterPage';
@@ -18,11 +18,20 @@ import { UserContextProvider } from './UserContext';
 
 import Layout from './Layout';
 import LoginForm from './pages/Login';
+import Noticias from './pages/NoticiaCompleta';
+import RegisterPage from './pages/RegisterPage';
+import Comunidades from './pages/Comunidades';
+import VerComunidad from './pages/VerComunidad';
+
+import Layout from './Layout';
+import LoginForm from './pages/Login';
+import Logout from './pages/Logout';
 import AnimatedCircle from './AnimatedCircle';
 import './App.css';
 
 function App() {
   return (
+
     <UserContextProvider> {/* el UserProvider aca envuelve todo */}
       <Router>
         <Routes>
@@ -33,17 +42,22 @@ function App() {
             <Route path="/pagina-noticias" element={<Noticias />} />
             <Route path="/redirigiendo" element={<AnimatedCircle />} />
             <Route path="/login" element={<LoginForm />} />
+
             <Route path="/post-detalles" element={<PostDetail />} />
             <Route path="/recuperar" element={<Recuperar />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/subir-video" element={<SubirVideo />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/crear-post" element={<CrearPost />} />
             <Route path="/comunidades" element={<Comunidades />} />
             <Route path="/ver-comunidad" element={<VerComunidad />} />
           </Route>
         </Routes>
       </Router>
+
     </UserContextProvider>
+
   );
 }
 

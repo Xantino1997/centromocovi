@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@300&display=swap");
 
 .footer {
@@ -212,6 +213,231 @@
   .footer .copyright {
     background-color: #000;
     padding: 8px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ffa500;
+  }
+}
+
+/* Media Query para pantallas grandes, como computadoras de escritorio */
+@media screen and (min-width: 1024px) {
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Condensed:wght@300&display=swap");
+
+.footer {
+  background-color: #3463ad;
+  color: white;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: "Amatic SC", cursive;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.container-column-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.partner-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.partner-list > li {
+  padding-top: 20px;
+}
+
+.partner-list-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+.redes-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.redes-list > li {
+  padding-top: 20px;
+}
+
+.redes-list-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+.contacto-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-weight: bold;
+}
+.contacto-list > li {
+  padding-top: 20px;
+}
+
+.contacto-list-link {
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 40px;
+  font-weight: bold;
+}
+
+.social-facebook {
+  margin-right: 5px;
+  width: 15%;
+  border-radius: 50%;
+}
+.social-instagram {
+  margin-right: 5px;
+  width: 15%;
+  border-radius: 30%;
+}
+.social-youtube {
+  margin-right: 5px;
+  width: 15%;
+  border-radius: 30%;
+}
+
+.social-text {
+  margin-left: 5px;
+}
+
+.escudo {
+  margin-right: 5px;
+  width: 8%;
+  border-radius: 30%;
+}
+.contactos {
+  margin-right: 5px;
+  width: 8%;
+  border-radius: 30%;
+}
+.column-title {
+  color: orange;
+  font-size: 15px;
+}
+
+.column p {
+  color: white;
+  font-size: 3px;
+}
+
+.footer .copyright {
+  background-color: #000;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  color: #ffa500;
+}
+
+/* Media Query para pantallas pequeñas, como smartphones */
+@media screen and (max-width: 767px) {
+  .footer {
+    background-color: #3463ad;
+    color: white;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .container-column-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .partner-list {
+    list-style-type: none;
+    font-size: 10px;
+  }
+  .partner-list > li {
+    padding-top: 20px;
+  }
+
+  .partner-list-link {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .redes-list {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+  .redes-list > li {
+    padding-top: 10px;
+  }
+
+  .redes-list-link {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .contacto-list {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  .contacto-list > li {
+    padding-top: 20px;
+  }
+
+  .contacto-list-link {
+    color: #fff;
+    padding-bottom: 40px;
+    font-weight: bold;
+  }
+
+  .social-facebook {
+    width: 15%;
+    border-radius: 50%;
+  }
+  .social-instagram {
+    width: 15%;
+    border-radius: 30%;
+  }
+  .social-youtube {
+    margin-right: 5px;
+    width: 15%;
+    border-radius: 30%;
+  }
+  .social-text {
+    margin-left: 5px;
+  }
+
+  .escudo {
+    margin-right: 5px;
+    width: 15%;
+    border-radius: 30%;
+  }
+  .contactos {
+    margin-right: 3px;
+    width: 12%;
+    border-radius: 30%;
+  }
+  .column h3 {
+    color: orange;
+  }
+
+  .column p {
+    color: white;
+  }
+
+  .footer .copyright {
+    background-color: #000;
+    padding: 10px;
     margin-top: 10px;
     width: 100%;
     text-align: center;
