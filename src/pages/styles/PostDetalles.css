@@ -1,0 +1,15 @@
+.container-post{
+    margin-top:20px;
+    margin-bottom:20px;
+    text-align:center;
+    align-self:center;
+    cursor:pointer;
+}
+.container-post-lista{
+    background:#ccc;
+    margin-top:20px;
+    margin-bottom:20px;
+    text-align:center;
+    align-self:center;
+    cursor:pointer;
+}

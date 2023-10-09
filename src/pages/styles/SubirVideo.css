@@ -1,0 +1,151 @@
+/* styles/SubirVideo.css */
+
+.subirVideo {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #454245;
+}
+
+.subirVideo-titulo {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  background-color:#007bff;;
+}
+.subirVideo-progreso {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color:#fff ;
+  padding: 10px;
+}
+
+
+
+.drag-drop {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.thumbnail img {
+  max-width: 100%;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.border-dot {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  cursor: pointer;
+  color: #ccc;
+  background-color: #fff;
+}
+
+.border-dot:hover {
+  border: 2px dashed blue;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #ddd;
+  color: #222;
+}
+
+.border-dot i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.input-nombre-video {
+  width: 99%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button.cancel-button {
+  background-color: #dc3545;
+}
+
+.progress {
+  background-color: #ccc;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  background-color: #dc3545;
+
+}
+
+.progress-bar {
+  position: relative;
+  height: 30px;
+  transition: width 1s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+
+.progress-bar.loading {
+  animation: loading 2s infinite;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7); 
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.videos-subidos{
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+}
+
+.videos-subidos ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.videos-subidos ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.videos-subidos .subirVideo-eliminar {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  margin:10px;
+  border-radius: 5px;
+  border-radius: 50%;
+  width: 5%;
+  cursor: pointer;
+}

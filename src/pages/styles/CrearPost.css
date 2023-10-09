@@ -1,0 +1,72 @@
+.conteiner-crear-post {
+  /* postition:absolute; */
+  width: 100%;
+  background-color: #cccccc;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.conteiner-crear-post-form {
+  width: 30%;
+  height: 70vh;
+  background-color: #fff;
+  margin: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.conteiner-crear-post-form input {
+  width: 100%;
+  text-align: center;
+  height: 5vh;
+  background-color: #fff;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+
+.file-form-div input{
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estilos iniciales para la clase .file-form-select */
+.file-form-select {
+    background-color: lightgreen;
+    color: #000;
+    text-align: center;
+    border-color: lightblue;
+    font-weight: bold;
+  }
+  
+  /* Estilo cuando el select está enfocado (seleccionado) */
+  .file-form-select:focus {
+    border:5px solid lightgreen;
+  }
+  
+  /* Estilo cuando una opción está seleccionada */
+  .file-form-select option:checked {
+    border-color: white;
+  }
+  
+.content {
+  text-align: center;
+  position: relative;
+  align-items: center;
+  overflow: scroll;
+}
+
+.conteiner-crear-post-btn {
+  background-color:lightblue;
+  color: #000;
+  position: relative;
+  margin-top: 50px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px;
+}

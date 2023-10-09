@@ -1,0 +1,25 @@
+Dia: 6-9-2023
+Trabaje en IndexPage.
+
+Cambie nombre de Carousel.css a IndexPage.css, ademas descargue imagenes, agregue link y description a las imagenes 
+continuar con dar ruta a las noticias por id para que lleven a una misma ruta pero se coloquen de forma dinamica como tal, dejar guia para poder hacer esto desde bse de BrdsAn0yb0D8qJacMTDLOGCxsXH6
+
+Ademas en Noticias y Noticias Completas coloque ademas cambios dinamicos para poder hacer que se presente la noticias y el articulo segun sea necesario
+-----------------------------------
+Dia: 7-9-2023
+Trabaje en Logout Y Login tanto front como en el bakcend, ya user se puede logear y permte traer los token de aut
+
+
+Dia: 8-9-2023
+
+CrearPost tratar de crear y almacenar los post desde el administrator
+
+
+Dia: 9-9-2023
+
+Terminado CrearPost con user autentificado agregado mail de prueba para enviar a los suscritores ademas se genero el logout libre de tokem de sesion de registro
+se edito el suscriptores.js y el formulario de crarPost
+
+Dia 6/10/2023
+
+Terminado ruta subir videos agrgue imagenes falta subir a git hub
