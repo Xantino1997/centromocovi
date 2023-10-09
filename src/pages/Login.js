@@ -93,8 +93,8 @@ export default function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              autoComplete="off" // Deshabilita el autocompletado
-              onPaste={(e) => e.preventDefault()} // Impide pegar en el input
+              autoComplete="off" 
+              onPaste={(e) => e.preventDefault()} 
             />
           </div>
           <button

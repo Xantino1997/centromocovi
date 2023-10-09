@@ -13,7 +13,7 @@ const ArticuloDiv = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET a la ruta /post en tu API
-    fetch("http://localhost:3000/post")
+    fetch("http://localhost:4000/post")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
