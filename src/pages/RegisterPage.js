@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState(""); // Agregar estado para el correo electrónico
+  const [email, setEmail] = useState(""); 
   const [profilePicture, setProfilePicture] = useState(null);
 
   async function register(ev) {
