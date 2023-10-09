@@ -32,7 +32,7 @@ export default function CrearPost() {
     data.set("localidad", localidad);
     console.log(data + " el formulario");
     try {
-      const response = await fetch("https://back-comunidad.vercel.app/post", {
+      const response = await fetch("http://localhost:4000/post", {
         method: "POST",
         body: data,
         headers: {

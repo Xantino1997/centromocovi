@@ -11,7 +11,7 @@ export default function PostDetail({}) {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://back-comunidad.vercel.app/post/`).then((response) => {
+    fetch(`http://localhost:4000/post/`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });

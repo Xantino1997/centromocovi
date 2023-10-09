@@ -13,7 +13,7 @@ const ArticuloDiv = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET a la ruta /post en tu API
-    fetch("https://back-comunidad.vercel.app/post")
+    fetch("http://localhost:3000/post")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);

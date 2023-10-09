@@ -111,23 +111,23 @@ function Header() {
         )}
         <ul>
           <li>
-            <Link to="/">Inicio</Link>
+            <Link onClick={handleMenuToggle} to="/">Inicio</Link>
           </li>
           <li>
-            <Link to="/sobre-nosotros">Sobre Nosotros</Link>
+            <Link onClick={handleMenuToggle} to="/sobre-nosotros">Sobre Nosotros</Link>
           </li>
           <li>
-            <Link to="/noticias">Noticias</Link>
+            <Link onClick={handleMenuToggle} to="/noticias">Noticias</Link>
           </li>
           <li>
-            <Link to="/comunidades">Comunidades</Link>
+            <Link onClick={handleMenuToggle} to="/comunidades">Comunidades</Link>
           </li>
           {/* <li>
                         <Link to="/comunidad">Comunidad</Link>
                       </li> */}
           {!username && (
             <li>
-              <Link to="/login">Iniciar sesión</Link>
+              <Link onClick={handleMenuToggle} to="/login">Iniciar sesión</Link>
             </li>
           )}
           {username && (
@@ -136,10 +136,10 @@ function Header() {
                 <Link to="/post-detalles">Crear Noticias</Link>
               </li> */}
               <li>
-                <Link to="/crear-post">Crear Post</Link>
+                <Link onClick={handleMenuToggle} to="/crear-post">Crear Post</Link>
               </li>
               <li>
-                <Link to="/subir-video">Subir video</Link>
+                <Link onClick={handleMenuToggle} to="/subir-video">Subir video</Link>
               </li>
               <li>
                 <Link

@@ -8,7 +8,7 @@ const NoticiaDetalle = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET a la ruta /post/:postId en tu API
-    fetch(`https://back-comunidad.vercel.app/post/${postId}`)
+    fetch(`http://localhost:4000/post/${postId}`)
       .then((response) => response.json())
       .then((data) => {
         setPost(data);
