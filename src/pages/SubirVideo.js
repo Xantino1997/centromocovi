@@ -89,7 +89,7 @@ const SubirVideo = () => {
         updateProgress(progressEvent.loaded);
       });
 
-      const response = await fetch("http://localhost:4000/subir-video", {
+      const response = await fetch("https://back-comunidad.vercel.app/subir-video", {
         method: "POST",
         body: formData,
       });
