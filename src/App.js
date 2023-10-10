@@ -25,7 +25,6 @@ import "./App.css";
 function App() {
   return (
     <UserContextProvider>
-      {" "}
       {/* el UserProvider aca envuelve todo */}
       <Router>
         <Routes>

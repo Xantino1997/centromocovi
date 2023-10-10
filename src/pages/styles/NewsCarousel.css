@@ -87,7 +87,6 @@
   margin: 10px;
   padding: 5px 10px;
   width: 12%;
-
   font-size: 20px;
   cursor: pointer;
 }
@@ -284,10 +283,10 @@
       border: 5px solid #3463ad;
       box-shadow: 0 0 10px #3463ad;
       display: flex;
-      margin-left: 50px;
+      left: 0px;
       align-items: center;
       flex-direction: column;
-      width:400px; 
+      width:300px; 
     }
     
     .news-item-img {

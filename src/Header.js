@@ -21,7 +21,7 @@ function Header() {
   // const { setUserInfo, user } = useUserContext(useUserContext);
 
   useEffect(() => {
-    fetch(`https://back-comunidad.vercel.app/profile`, {
+    fetch(`http://localhost:4000/profile`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -32,7 +32,7 @@ function Header() {
 
   async function logout() {
     try {
-      await fetch("https://back-comunidad.vercel.app/logout", {
+      await fetch("http://localhost:4000/logout", {
         credentials: "include",
         method: "POST",
       });
