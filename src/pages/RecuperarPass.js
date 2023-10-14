@@ -109,7 +109,7 @@ export default function RecuperarPass() {
         return;
       }
 
-      fetch("http://localhost:4000/cambiar-password", {
+      fetch("https://back-comunidad.vercel.app/cambiar-password", {
         method: "PUT",
         body: JSON.stringify({ email, newPassword, token: sentToken }),
         headers: {
