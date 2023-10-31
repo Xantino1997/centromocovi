@@ -26,7 +26,7 @@ export default function RegisterPage() {
     );
 
     try {
-      const response = await fetch("http://localhost:4000/register", {
+      const response = await fetch("https://back-comunidad.vercel.app/register", {
         method: "POST",
         body: formData,
       });
